@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -7,13 +7,14 @@ use_frameworks!
 project 'SimpleHealthTracker/SimpleHealthTracker'
 
 target 'SimpleHealthTracker' do
-pod 'Lock' , '~> 2.5'
-pod 'Auth0',  '~> 1.10'
-pod 'SimpleKeychain', '~> 0.7'
-pod 'SwiftMessages'
-pod 'AFNetworking', '~> 3.0'
-pod 'Alamofire'
-pod 'Kingfisher','~> 4.0'
+pod 'Lock' 
+pod 'Auth0'
+pod 'SimpleKeychain'
+pod 'JWTDecode'
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'Lock/Core', '~> 1.11', :inhibit_warnings => true
+pod 'Lock-Facebook'
 # pod 'ActiveLabel'
 # pod 'SwiftyGif'
 # pod 'DropDown'

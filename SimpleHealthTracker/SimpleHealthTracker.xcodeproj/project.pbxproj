@@ -16,6 +16,12 @@
 		954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B91A121809B3000ED7221 /* LaunchScreen.storyboard */; };
 		954B91AE21809B3100ED7221 /* SimpleHealthTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B91AD21809B3100ED7221 /* SimpleHealthTrackerTests.swift */; };
 		954B91B921809B3100ED7221 /* SimpleHealthTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B91B821809B3100ED7221 /* SimpleHealthTrackerUITests.swift */; };
+		9563576E21959B7B0027F183 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563576D21959B7B0027F183 /* Application.swift */; };
+		9563576F21959C530027F183 /* Lock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9563577021959C540027F183 /* Lock.framework */; };
+		9563577221959CEE0027F183 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577121959CEE0027F183 /* ProfileViewController.swift */; };
+		9563577621959CFE0027F183 /* TokenRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577321959CFE0027F183 /* TokenRefresh.swift */; };
+		9563577721959CFE0027F183 /* UserProfile+UserMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577421959CFE0027F183 /* UserProfile+UserMetadata.swift */; };
+		9563577821959CFE0027F183 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577521959CFE0027F183 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		954B91B421809B3100ED7221 /* SimpleHealthTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleHealthTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B91B821809B3100ED7221 /* SimpleHealthTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHealthTrackerUITests.swift; sourceTree = "<group>"; };
 		954B91BA21809B3100ED7221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9563576D21959B7B0027F183 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		9563577021959C540027F183 /* Lock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9563577121959CEE0027F183 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9563577321959CFE0027F183 /* TokenRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresh.swift; sourceTree = "<group>"; };
+		9563577421959CFE0027F183 /* UserProfile+UserMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfile+UserMetadata.swift"; sourceTree = "<group>"; };
+		9563577521959CFE0027F183 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9563576F21959C530027F183 /* Lock.framework in Frameworks */,
 				31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +97,7 @@
 		75A95239611A1AA40B11F1D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9563577021959C540027F183 /* Lock.framework */,
 				6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */,
 			);
 			name = Frameworks;
@@ -114,9 +128,14 @@
 		954B919521809B3000ED7221 /* SimpleHealthTracker */ = {
 			isa = PBXGroup;
 			children = (
+				9563576D21959B7B0027F183 /* Application.swift */,
 				954B919621809B3000ED7221 /* AppDelegate.swift */,
 				954B919821809B3000ED7221 /* FirstViewController.swift */,
 				954B919A21809B3000ED7221 /* SecondViewController.swift */,
+				9563577121959CEE0027F183 /* ProfileViewController.swift */,
+				9563577521959CFE0027F183 /* Storage.swift */,
+				9563577321959CFE0027F183 /* TokenRefresh.swift */,
+				9563577421959CFE0027F183 /* UserProfile+UserMetadata.swift */,
 				954B919C21809B3000ED7221 /* Main.storyboard */,
 				954B919F21809B3000ED7221 /* Assets.xcassets */,
 				954B91A121809B3000ED7221 /* LaunchScreen.storyboard */,
@@ -326,22 +345,20 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
 				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -355,7 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9563576E21959B7B0027F183 /* Application.swift in Sources */,
+				9563577621959CFE0027F183 /* TokenRefresh.swift in Sources */,
 				954B919B21809B3000ED7221 /* SecondViewController.swift in Sources */,
+				9563577221959CEE0027F183 /* ProfileViewController.swift in Sources */,
+				9563577721959CFE0027F183 /* UserProfile+UserMetadata.swift in Sources */,
+				9563577821959CFE0027F183 /* Storage.swift in Sources */,
 				954B919721809B3000ED7221 /* AppDelegate.swift in Sources */,
 				954B919921809B3000ED7221 /* FirstViewController.swift in Sources */,
 			);
@@ -527,6 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
 				INFOPLIST_FILE = SimpleHealthTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,6 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
 				INFOPLIST_FILE = SimpleHealthTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
