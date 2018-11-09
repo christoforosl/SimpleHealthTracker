@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */; };
+		954B919721809B3000ED7221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919621809B3000ED7221 /* AppDelegate.swift */; };
+		954B919921809B3000ED7221 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919821809B3000ED7221 /* FirstViewController.swift */; };
+		954B919B21809B3000ED7221 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919A21809B3000ED7221 /* SecondViewController.swift */; };
+		954B919E21809B3000ED7221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B919C21809B3000ED7221 /* Main.storyboard */; };
+		954B91A021809B3000ED7221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954B919F21809B3000ED7221 /* Assets.xcassets */; };
+		954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B91A121809B3000ED7221 /* LaunchScreen.storyboard */; };
+		954B91AE21809B3100ED7221 /* SimpleHealthTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B91AD21809B3100ED7221 /* SimpleHealthTrackerTests.swift */; };
+		954B91B921809B3100ED7221 /* SimpleHealthTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B91B821809B3100ED7221 /* SimpleHealthTrackerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		954B91AA21809B3100ED7221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954B918B21809B3000ED7221 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954B919221809B3000ED7221;
+			remoteInfo = SimpleHealthTracker;
+		};
+		954B91B521809B3100ED7221 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954B918B21809B3000ED7221 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954B919221809B3000ED7221;
+			remoteInfo = SimpleHealthTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		54311A66630383BDCFF7B57A /* Pods-SimpleHealthTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.release.xcconfig"; sourceTree = "<group>"; };
+		6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleHealthTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B919321809B3000ED7221 /* SimpleHealthTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHealthTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B919621809B3000ED7221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		954B919821809B3000ED7221 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		954B919A21809B3000ED7221 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		954B919D21809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		954B919F21809B3000ED7221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		954B91A221809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		954B91A421809B3000ED7221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954B91A921809B3100ED7221 /* SimpleHealthTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleHealthTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B91AD21809B3100ED7221 /* SimpleHealthTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHealthTrackerTests.swift; sourceTree = "<group>"; };
+		954B91AF21809B3100ED7221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954B91B421809B3100ED7221 /* SimpleHealthTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleHealthTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B91B821809B3100ED7221 /* SimpleHealthTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHealthTrackerUITests.swift; sourceTree = "<group>"; };
+		954B91BA21809B3100ED7221 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		954B919021809B3000ED7221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91A621809B3100ED7221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91B121809B3100ED7221 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75A95239611A1AA40B11F1D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		954B918A21809B3000ED7221 = {
+			isa = PBXGroup;
+			children = (
+				954B919521809B3000ED7221 /* SimpleHealthTracker */,
+				954B91AC21809B3100ED7221 /* SimpleHealthTrackerTests */,
+				954B91B721809B3100ED7221 /* SimpleHealthTrackerUITests */,
+				954B919421809B3000ED7221 /* Products */,
+				C00324B7ED7FFB26C1CAB9CC /* Pods */,
+				75A95239611A1AA40B11F1D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		954B919421809B3000ED7221 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				954B919321809B3000ED7221 /* SimpleHealthTracker.app */,
+				954B91A921809B3100ED7221 /* SimpleHealthTrackerTests.xctest */,
+				954B91B421809B3100ED7221 /* SimpleHealthTrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		954B919521809B3000ED7221 /* SimpleHealthTracker */ = {
+			isa = PBXGroup;
+			children = (
+				954B919621809B3000ED7221 /* AppDelegate.swift */,
+				954B919821809B3000ED7221 /* FirstViewController.swift */,
+				954B919A21809B3000ED7221 /* SecondViewController.swift */,
+				954B919C21809B3000ED7221 /* Main.storyboard */,
+				954B919F21809B3000ED7221 /* Assets.xcassets */,
+				954B91A121809B3000ED7221 /* LaunchScreen.storyboard */,
+				954B91A421809B3000ED7221 /* Info.plist */,
+			);
+			path = SimpleHealthTracker;
+			sourceTree = "<group>";
+		};
+		954B91AC21809B3100ED7221 /* SimpleHealthTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				954B91AD21809B3100ED7221 /* SimpleHealthTrackerTests.swift */,
+				954B91AF21809B3100ED7221 /* Info.plist */,
+			);
+			path = SimpleHealthTrackerTests;
+			sourceTree = "<group>";
+		};
+		954B91B721809B3100ED7221 /* SimpleHealthTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				954B91B821809B3100ED7221 /* SimpleHealthTrackerUITests.swift */,
+				954B91BA21809B3100ED7221 /* Info.plist */,
+			);
+			path = SimpleHealthTrackerUITests;
+			sourceTree = "<group>";
+		};
+		C00324B7ED7FFB26C1CAB9CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */,
+				54311A66630383BDCFF7B57A /* Pods-SimpleHealthTracker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		954B919221809B3000ED7221 /* SimpleHealthTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954B91BD21809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTracker" */;
+			buildPhases = (
+				66C27519D67A17E5FDE3952D /* [CP] Check Pods Manifest.lock */,
+				954B918F21809B3000ED7221 /* Sources */,
+				954B919021809B3000ED7221 /* Frameworks */,
+				954B919121809B3000ED7221 /* Resources */,
+				CBFD8A5F62119E5640542A2A /* [CP] Embed Pods Frameworks */,
+				61B17363BFA082C7FFFA2761 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleHealthTracker;
+			productName = SimpleHealthTracker;
+			productReference = 954B919321809B3000ED7221 /* SimpleHealthTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		954B91A821809B3100ED7221 /* SimpleHealthTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954B91C021809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTrackerTests" */;
+			buildPhases = (
+				954B91A521809B3100ED7221 /* Sources */,
+				954B91A621809B3100ED7221 /* Frameworks */,
+				954B91A721809B3100ED7221 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				954B91AB21809B3100ED7221 /* PBXTargetDependency */,
+			);
+			name = SimpleHealthTrackerTests;
+			productName = SimpleHealthTrackerTests;
+			productReference = 954B91A921809B3100ED7221 /* SimpleHealthTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		954B91B321809B3100ED7221 /* SimpleHealthTrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954B91C321809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTrackerUITests" */;
+			buildPhases = (
+				954B91B021809B3100ED7221 /* Sources */,
+				954B91B121809B3100ED7221 /* Frameworks */,
+				954B91B221809B3100ED7221 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				954B91B621809B3100ED7221 /* PBXTargetDependency */,
+			);
+			name = SimpleHealthTrackerUITests;
+			productName = SimpleHealthTrackerUITests;
+			productReference = 954B91B421809B3100ED7221 /* SimpleHealthTrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		954B918B21809B3000ED7221 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = CGL;
+				TargetAttributes = {
+					954B919221809B3000ED7221 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					954B91A821809B3100ED7221 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 954B919221809B3000ED7221;
+					};
+					954B91B321809B3100ED7221 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 954B919221809B3000ED7221;
+					};
+				};
+			};
+			buildConfigurationList = 954B918E21809B3000ED7221 /* Build configuration list for PBXProject "SimpleHealthTracker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 954B918A21809B3000ED7221;
+			productRefGroup = 954B919421809B3000ED7221 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				954B919221809B3000ED7221 /* SimpleHealthTracker */,
+				954B91A821809B3100ED7221 /* SimpleHealthTrackerTests */,
+				954B91B321809B3100ED7221 /* SimpleHealthTrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		954B919121809B3000ED7221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */,
+				954B91A021809B3000ED7221 /* Assets.xcassets in Resources */,
+				954B919E21809B3000ED7221 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91A721809B3100ED7221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91B221809B3100ED7221 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61B17363BFA082C7FFFA2761 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66C27519D67A17E5FDE3952D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleHealthTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBFD8A5F62119E5640542A2A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		954B918F21809B3000ED7221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B919B21809B3000ED7221 /* SecondViewController.swift in Sources */,
+				954B919721809B3000ED7221 /* AppDelegate.swift in Sources */,
+				954B919921809B3000ED7221 /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91A521809B3100ED7221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B91AE21809B3100ED7221 /* SimpleHealthTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		954B91B021809B3100ED7221 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B91B921809B3100ED7221 /* SimpleHealthTrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		954B91AB21809B3100ED7221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 954B919221809B3000ED7221 /* SimpleHealthTracker */;
+			targetProxy = 954B91AA21809B3100ED7221 /* PBXContainerItemProxy */;
+		};
+		954B91B621809B3100ED7221 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 954B919221809B3000ED7221 /* SimpleHealthTracker */;
+			targetProxy = 954B91B521809B3100ED7221 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		954B919C21809B3000ED7221 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954B919D21809B3000ED7221 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		954B91A121809B3000ED7221 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				954B91A221809B3000ED7221 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		954B91BB21809B3100ED7221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		954B91BC21809B3100ED7221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		954B91BE21809B3100ED7221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		954B91BF21809B3100ED7221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54311A66630383BDCFF7B57A /* Pods-SimpleHealthTracker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		954B91C121809B3100ED7221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleHealthTracker.app/SimpleHealthTracker";
+			};
+			name = Debug;
+		};
+		954B91C221809B3100ED7221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleHealthTracker.app/SimpleHealthTracker";
+			};
+			name = Release;
+		};
+		954B91C421809B3100ED7221 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimpleHealthTracker;
+			};
+			name = Debug;
+		};
+		954B91C521809B3100ED7221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y26T3ZTSWZ;
+				INFOPLIST_FILE = SimpleHealthTrackerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cgl.SimpleHealthTrackerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SimpleHealthTracker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		954B918E21809B3000ED7221 /* Build configuration list for PBXProject "SimpleHealthTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B91BB21809B3100ED7221 /* Debug */,
+				954B91BC21809B3100ED7221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954B91BD21809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B91BE21809B3100ED7221 /* Debug */,
+				954B91BF21809B3100ED7221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954B91C021809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B91C121809B3100ED7221 /* Debug */,
+				954B91C221809B3100ED7221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954B91C321809B3100ED7221 /* Build configuration list for PBXNativeTarget "SimpleHealthTrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B91C421809B3100ED7221 /* Debug */,
+				954B91C521809B3100ED7221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 954B918B21809B3000ED7221 /* Project object */;
+}
