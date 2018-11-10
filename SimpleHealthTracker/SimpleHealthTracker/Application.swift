@@ -29,11 +29,11 @@ internal struct Application {
     static let sharedInstance = Application()
 
     let storage: Storage
-    var lock:Lock.A0Lock
+    var lock:A0Lock
 
     init() {
         self.storage = Storage()
-        self.lock = Lock.A0Lock()
+        self.lock = A0Lock()
         let facebook = A0FacebookAuthenticator.newAuthenticatorWithDefaultPermissions()
         self.lock.registerAuthenticators([facebook])
     }

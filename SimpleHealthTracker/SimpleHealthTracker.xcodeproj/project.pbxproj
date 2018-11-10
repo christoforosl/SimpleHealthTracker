@@ -23,6 +23,7 @@
 		9563577721959CFE0027F183 /* UserProfile+UserMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577421959CFE0027F183 /* UserProfile+UserMetadata.swift */; };
 		9563577821959CFE0027F183 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563577521959CFE0027F183 /* Storage.swift */; };
 		A3D85559219740A000503A05 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D855582197409F00503A05 /* MessageBox.swift */; };
+		A3D8555B219754BE00503A05 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3D8555A219754BE00503A05 /* Auth0.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9563577421959CFE0027F183 /* UserProfile+UserMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserProfile+UserMetadata.swift"; sourceTree = "<group>"; };
 		9563577521959CFE0027F183 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A3D855582197409F00503A05 /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		A3D8555A219754BE00503A05 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				954B919F21809B3000ED7221 /* Assets.xcassets */,
 				954B91A121809B3000ED7221 /* LaunchScreen.storyboard */,
 				954B91A421809B3000ED7221 /* Info.plist */,
+				A3D8555A219754BE00503A05 /* Auth0.plist */,
 			);
 			path = SimpleHealthTracker;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */,
 				954B91A021809B3000ED7221 /* Assets.xcassets in Resources */,
 				954B919E21809B3000ED7221 /* Main.storyboard in Resources */,
+				A3D8555B219754BE00503A05 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,8 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingController")
-        self.window?.rootViewController = controller
         
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector:#selector(finishSessionNotification), name: NSNotification.Name(rawValue: SessionNotification.Finish.rawValue), object: nil)
