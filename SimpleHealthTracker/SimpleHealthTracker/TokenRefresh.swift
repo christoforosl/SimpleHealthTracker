@@ -20,7 +20,7 @@ public class TokenRefresh: NSObject {
         self.client = client
     }
 
-    public func refresh(callback: ( NSError?,  String?) -> ()) {
+    public func refresh(callback: @escaping ( NSError?,  String?) -> ()) {
         if let jwt = storage.idToken {
             do {
                 let jwtDecoded = try decode(jwt: jwt)
@@ -29,10 +29,10 @@ public class TokenRefresh: NSObject {
                     return
                 }
                 if let refreshToken = storage.refreshToken {
-                    client.fetchNewIdTokenWithRefreshToken(refreshToken, parameters: nil, success: { (token) -> () in
-                        callback(error: nil, token: token.idToken)
+                    client.fetchNewIdToken(withRefreshToken: refreshToken, parameters: nil, success: { (token) -> () in
+                        callback( nil, token.idToken)
                         }, failure: { (error) -> () in
-                            callback(error: error, token: nil)
+                            callback( error as NSError,  nil)
                     })
                 } else {
                     callback(NSError(domain: "com.auth0.ios.refresh-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find a refresh token in Token Storage", comment: "No refresh_token")]), nil)
@@ -42,15 +42,15 @@ public class TokenRefresh: NSObject {
             }
             
         } else {
-            callback(error: NSError(domain: "com.auth0.ios.id-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find an id_token in Token Storage", comment: "No id_token")]),  nil)
+            callback( NSError(domain: "com.auth0.ios.id-token", code: -1, userInfo: [NSLocalizedDescriptionKey: NSLocalizedString("Couldn't find an id_token in Token Storage", comment: "No id_token")]),  nil)
         }
     }
 
 }
 
 public extension A0Lock {
-    public func refreshIdTokenFromStorage(storage: Storage, callback: (NSError?,  String?) -> ()) {
+    public func refreshIdTokenFromStorage(storage: Storage, callback: @escaping (NSError?,  String?) -> ()) {
         let token = TokenRefresh(storage: storage, client: self.apiClient())
-        token.refresh(callback)
+        token.refresh(callback: callback)
     }
 }

@@ -12,7 +12,7 @@ pod 'Auth0'
 pod 'SimpleKeychain'
 pod 'JWTDecode'
 pod 'AFNetworking'
-pod 'MBProgressHUD'
+pod 'SwiftMessages'
 pod 'Lock/Core', '~> 1.11', :inhibit_warnings => true
 pod 'Lock-Facebook'
 # pod 'ActiveLabel'

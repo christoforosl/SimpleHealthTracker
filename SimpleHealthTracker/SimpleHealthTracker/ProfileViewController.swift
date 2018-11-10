@@ -25,7 +25,7 @@ import Lock
 import AFNetworking
 import CoreGraphics
 import Auth0
-import MBProgressHUD
+
 
 class ProfileViewController: UIViewController {
 
@@ -51,26 +51,26 @@ class ProfileViewController: UIViewController {
 
         updateUI()
 
-        let center = NSNotificationCenter.defaultCenter()
-        center.addObserver(self, selector: "keyboardShown:", name: UIKeyboardWillShowNotification, object: nil)
-        center.addObserver(self, selector: "keyboardHidden:", name: UIKeyboardWillHideNotification, object: nil)
+        let center = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(keyboardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
-    func keyboardShown(notification: NSNotification) {
+    @objc func keyboardShown(notification: NSNotification) {
         let info = notification.userInfo!
-        self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        self.keyboardFrame = self.view.convertRect(self.keyboardFrame!, fromView: nil)
+        self.keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        self.keyboardFrame = self.view.convert(self.keyboardFrame!, from: nil)
         self.containerHeight.constant = 600 + self.keyboardFrame!.size.height
         if let field = self.currentField {
-            self.scrollToField(field, keyboardFrame: self.keyboardFrame!)
+            self.scrollToField(field: field, keyboardFrame: self.keyboardFrame!)
         }
     }
 
-    func keyboardHidden(notification: NSNotification) {
+    @objc func keyboardHidden(notification: NSNotification) {
         self.containerHeight.constant = 600
         self.keyboardFrame = nil
     }
@@ -78,7 +78,7 @@ class ProfileViewController: UIViewController {
     @IBAction func editingBegan(sender: AnyObject) {
         self.currentField = sender as? UITextField
         if let field = self.currentField, let frame = self.keyboardFrame {
-            self.scrollToField(field, keyboardFrame: frame)
+            self.scrollToField(field: field, keyboardFrame: frame)
         }
     }
 
@@ -95,41 +95,31 @@ class ProfileViewController: UIViewController {
         }
         if let next = self.view.viewWithTag(nextTag) as? UITextField, let frame = self.keyboardFrame {
             next.becomeFirstResponder()
-            self.scrollToField(next, keyboardFrame: frame)
+            self.scrollToField(field: next, keyboardFrame: frame)
         }
     }
     
     @IBAction func saveProfile(sender: AnyObject) {
         hideKeyboard()
-        let hud = MBProgressHUD.showHUDAddedTo(self.navigationController?.view, animated: true)
-        hud.mode = .Indeterminate
-        hud.labelText = NSLocalizedString("Saving…", comment: "Saving Profile message")
+        
         let storage = Application.sharedInstance.storage
         if let idToken = storage.idToken {
+           
             Auth0
-                .users(idToken)
-                .update(userMetadata: [
+                .users(token: idToken)
+                .patch("user identifier", userMetadata:  [
                     MetadataKeys.GivenName.rawValue: self.firstName.text!,
                     MetadataKeys.FamilyName.rawValue: self.lastName.text!,
                     MetadataKeys.Address.rawValue: self.address.text!,
                     MetadataKeys.Birthday.rawValue: self.birthday.text!,
                     ])
-                .responseJSON { _, profileJSON in
-                    if profileJSON != nil {
-                        let newProfile = A0UserProfile(dictionary: profileJSON!)
-                        storage.profile = newProfile
-                        self.profile = newProfile
-                        let checkImageView = UIImageView(image: UIImage(named: "checkmark"))
-                        hud.customView = checkImageView
-                        hud.mode = .CustomView
-                        hud.labelText = NSLocalizedString("Saved!", comment: "Saved Profile message")
-                        hud.hide(true, afterDelay: 0.8)
-                    } else {
-                        let checkImageView = UIImageView(image: UIImage(named: "cross"))
-                        hud.customView = checkImageView
-                        hud.mode = .CustomView
-                        hud.labelText = NSLocalizedString("Failed!", comment: "Failed Save Profile message")
-                        hud.hide(true, afterDelay: 0.8)
+                .start { result in
+                    switch result {
+                    case .success( _):
+                        MessageBox.show( "User Info Saved succesfully")
+                        
+                    case .failure(let error):
+                        MessageBox.showError( error: error )
                     }
             }
         }
@@ -140,7 +130,7 @@ class ProfileViewController: UIViewController {
     }
 
     private func scrollToField(field: UITextField, keyboardFrame: CGRect) {
-        let scrollOffset = self.offsetForFrame(field.frame, keyboardFrame: keyboardFrame)
+        let scrollOffset = self.offsetForFrame(frame: field.frame, keyboardFrame: keyboardFrame)
         self.scrollView.setContentOffset(CGPoint(x: 0, y: scrollOffset), animated: true)
     }
 
@@ -155,7 +145,7 @@ class ProfileViewController: UIViewController {
 
     private func updateUI() {
         self.title = self.profile.name
-        self.avatar.setImageWithURL(self.profile.picture)
+        self.avatar.setImageWith(self.profile.picture)
         self.firstName.text = self.profile.firstName
         self.lastName.text = self.profile.lastName
         self.email.text = self.profile.email

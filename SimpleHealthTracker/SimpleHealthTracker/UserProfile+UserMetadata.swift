@@ -30,22 +30,22 @@ enum MetadataKeys: String {
 extension A0UserProfile {
 
     var username: String {
-        return metadata(.Username, defaultValue: self.nickname)!
+        return metadata(key: .Username, defaultValue: self.nickname)!
     }
 
     var firstName: String? {
-        return metadata(.GivenName)
+        return metadata(key: .GivenName)
     }
 
     var lastName: String? {
-        return metadata(.FamilyName)
+        return metadata(key: .FamilyName)
     }
 
     private func metadata<T>(key: MetadataKeys, defaultValue: T? = nil) -> T? {
         switch(self.userMetadata[key.rawValue] as? T, defaultValue) {
-        case let (.Some(value), .None):
+        case let (.some(value), .none):
             return value
-        case let (.None, .Some(value)):
+        case let (.none, .some(value)):
             return value
         default:
             return self.extraInfo[key.rawValue] as? T

@@ -14,21 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoadingController")
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingController")
         self.window?.rootViewController = controller
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "finishSessionNotification:", name: SessionNotification.Finish.rawValue, object: nil)
-        notificationCenter.addObserver(self, selector: "startSessionNotification:", name: SessionNotification.Start.rawValue, object: nil)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector:#selector(finishSessionNotification), name: NSNotification.Name(rawValue: SessionNotification.Finish.rawValue), object: nil)
+        notificationCenter.addObserver(self, selector:#selector(startSessionNotification), name: NSNotification.Name(rawValue: SessionNotification.Start.rawValue), object: nil)
+        
         let storage = Application.sharedInstance.storage
         let lock = Application.sharedInstance.lock
-        lock.applicationLaunchedWithOptions(launchOptions)
-        lock.refreshIdTokenFromStorage(storage) { (error, token) -> () in
+        lock.applicationLaunched(options: launchOptions)
+        lock.refreshIdTokenFromStorage(storage: storage) { (error, token) -> () in
             if error != nil {
-                self.showLock(false)
+                self.showLock(animated: false)
                 return;
             }
             storage.idToken = token
@@ -37,47 +38,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        return Application.sharedInstance.lock.handleURL(url, sourceApplication: sourceApplication)
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return Application.sharedInstance.lock.handle(url, sourceApplication: sourceApplication)
     }
     
-    func startSessionNotification(notification: NSNotification) {
+    @objc func startSessionNotification(notification: NSNotification) {
         self.showMainRoot()
     }
     
-    func finishSessionNotification(notification: NSNotification) {
+    @objc func finishSessionNotification(notification: NSNotification) {
         Application.sharedInstance.storage.clear()
-        self.showLock(true)
+        self.showLock(animated: true)
     }
     
     private func showMainRoot() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateInitialViewController()
         self.window?.rootViewController = controller
-        UIView.transitionWithView(self.window!, duration: 0.5, options: .TransitionFlipFromLeft, animations: { }, completion: nil)
+        UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { }, completion: nil)
     }
     
     private func showLock(animated: Bool = false) {
         let storage = Application.sharedInstance.storage
         storage.clear()
         let lock = Application.sharedInstance.lock.newLockViewController()
-        lock.onAuthenticationBlock = { (profile, token) in
+        lock?.onAuthenticationBlock = { (profile, token) in
             switch(profile, token) {
-            case let (.Some(profile), .Some(token)):
+            case let (.some(profile), .some(token)):
                 storage.save(token: token, profile: profile)
-                NSNotificationCenter.defaultCenter().postNotificationName(SessionNotification.Start.rawValue, object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: SessionNotification.Start.rawValue), object: nil)
             default:
                 print("Either auth0 token or profile of the user was nil, please check your Auth0 Lock config")
             }
         }
         self.window?.rootViewController = lock
         if animated {
-            UIView.transitionWithView(self.window!, duration: 0.5, options: .TransitionFlipFromLeft, animations: { }, completion: nil)
+            UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { }, completion: nil)
         }
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
