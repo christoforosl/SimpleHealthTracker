@@ -10,8 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GillSans.ttc">
-            <string>GillSans</string>
+        <array key="Gotham-Bold_0.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
         </array>
     </customFonts>
     <scenes>
@@ -23,32 +26,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Health Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itd-jf-Lqo">
-                                <rect key="frame" x="5" y="508" width="365" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2ft-hG-uS1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Simple Health Tracker" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="T4H-3d-xEH" userLabel="Product Name">
+                                <rect key="frame" x="0.0" y="500" width="375" height="42"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoMakr_42BEUn" translatesAutoresizingMaskIntoConstraints="NO" id="ZaE-so-lvW">
-                                <rect key="frame" x="33" y="168" width="309" height="330"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018 CodeGen.org  All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd" userLabel="Copyright">
+                                <rect key="frame" x="0.0" y="621.5" width="375" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StoryBoardLogo" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXV-1k-8E6" userLabel="Splash image">
+                                <rect key="frame" x="50" y="120" width="275" height="342"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="309" id="M2k-mS-I1I"/>
-                                    <constraint firstAttribute="height" constant="330" id="N5g-67-YYh"/>
+                                    <constraint firstAttribute="height" constant="342" id="7PN-7h-LNw"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1 Build: 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0M-qN-uEn" userLabel="APP_LABEL">
+                                <rect key="frame" x="140.5" y="602" width="95" height="11"/>
+                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.11764705882352941" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="itd-jf-Lqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="EK5-6A-1jO"/>
-                            <constraint firstItem="ZaE-so-lvW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GOp-tO-TV4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="itd-jf-Lqo" secondAttribute="trailing" constant="5" id="Ks1-P4-2VU"/>
-                            <constraint firstItem="itd-jf-Lqo" firstAttribute="top" secondItem="ZaE-so-lvW" secondAttribute="bottom" constant="10" id="cao-G9-ugD"/>
-                            <constraint firstItem="ZaE-so-lvW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tQs-kK-ID1"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
+                            <constraint firstItem="bXV-1k-8E6" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="100" id="82T-9n-IJZ"/>
+                            <constraint firstItem="bXV-1k-8E6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DPi-42-0ic"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstAttribute="trailing" secondItem="bXV-1k-8E6" secondAttribute="trailing" constant="50" id="U9x-lm-iBS"/>
+                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
+                            <constraint firstItem="bXV-1k-8E6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="fYb-En-xm1"/>
+                            <constraint firstItem="z0M-qN-uEn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="o6f-OZ-A4G"/>
+                            <constraint firstItem="obG-Y5-kRd" firstAttribute="top" secondItem="z0M-qN-uEn" secondAttribute="bottom" constant="8" id="wuq-Xg-gKw"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,6 +75,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoMakr_42BEUn" width="600" height="561"/>
+        <image name="StoryBoardLogo" width="600" height="561"/>
     </resources>
 </document>
