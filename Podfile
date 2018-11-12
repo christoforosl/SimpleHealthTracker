@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -12,15 +12,7 @@ pod 'Auth0'
 pod 'SimpleKeychain'
 pod 'JWTDecode'
 pod 'AFNetworking'
-pod 'SwiftMessages'
-pod 'Lock/Core', '~> 1.11', :inhibit_warnings => true
-pod 'Lock-Facebook'
-# pod 'ActiveLabel'
-# pod 'SwiftyGif'
-# pod 'DropDown'
-# pod 'TagListView'
-# pod 'URLEmbeddedView','~> 0.14.0'
-# pod 'FZAccordionTableView', '~> 0.2.3'
-# https://github.com/AssistoLab/DropDown
+pod 'SwiftMessages','4.1.2'
+pod 'ActiveLabel','0.9'
 end
 

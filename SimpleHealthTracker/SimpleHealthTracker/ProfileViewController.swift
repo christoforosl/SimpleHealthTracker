@@ -40,7 +40,7 @@ class ProfileViewController: UIViewController {
 
     weak var currentField: UITextField?
     var keyboardFrame: CGRect?
-    var profile: A0UserProfile!
+    var profile: Profile!
 
     override func viewDidLoad() {
 
@@ -102,8 +102,8 @@ class ProfileViewController: UIViewController {
     @IBAction func saveProfile(sender: AnyObject) {
         hideKeyboard()
         
-        let storage = Application.sharedInstance.storage
-        if let idToken = storage.idToken {
+        
+        if let idToken = SessionManager.instance.getAccessToken() {
            
             Auth0
                 .users(token: idToken)
@@ -119,7 +119,7 @@ class ProfileViewController: UIViewController {
                         MessageBox.show( "User Info Saved succesfully")
                         
                     case .failure(let error):
-                        MessageBox.showError( error: error )
+                        MessageBox.showError( error.localizedDescription )
                     }
             }
         }
@@ -145,11 +145,16 @@ class ProfileViewController: UIViewController {
 
     private func updateUI() {
         self.title = self.profile.name
-        self.avatar.setImageWith(self.profile.picture)
-        self.firstName.text = self.profile.firstName
-        self.lastName.text = self.profile.lastName
+        self.avatar.setImageWith(self.profile.pictureURL)
+        self.firstName.text = self.profile.givenName
+        self.lastName.text = self.profile.familyName
         self.email.text = self.profile.email
         self.address.text = self.profile.userMetadata["address"] as? String
         self.birthday.text = self.profile.userMetadata["birthday"] as? String
     }
 }
+
+enum MetadataKeys: String {
+    case Username = "username", GivenName = "given_name", FamilyName = "family_name", Birthday = "birthday", Address = "address"
+}
+

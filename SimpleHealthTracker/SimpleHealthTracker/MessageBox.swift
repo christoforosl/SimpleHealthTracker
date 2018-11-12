@@ -10,11 +10,7 @@ import Foundation
 import SwiftMessages
 
 class MessageBox {
-    static func showError( error: Error ) {
-        print(error)
-        showError(error.localizedDescription, durationSeconds: 2)
-    }
-    
+        
     private static let sosIconText = "🅾️"
     private static let iconText = "✅"
     private static let DEAFULT_ERROR_TITLE = "System Error"

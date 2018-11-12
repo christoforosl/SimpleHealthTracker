@@ -1,82 +1,45 @@
-
+//
+//  AppDelegate.swift
+//  SimplestHealthTracker
+//
+//  Created by Chris on 24/10/2018.
+//  Copyright © 2018 CGL. All rights reserved.
+//
 
 import UIKit
-import Lock
-import SimpleKeychain
-
-enum SessionNotification: String {
-    case Start = "StartSession"
-    case Finish = "FinishSession"
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.makeKeyAndVisible()
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector:#selector(finishSessionNotification), name: NSNotification.Name(rawValue: SessionNotification.Finish.rawValue), object: nil)
-        notificationCenter.addObserver(self, selector:#selector(startSessionNotification), name: NSNotification.Name(rawValue: SessionNotification.Start.rawValue), object: nil)
-        
-        let storage = Application.sharedInstance.storage
-        let lock = Application.sharedInstance.lock
-        lock.applicationLaunched(options: launchOptions)
-        lock.refreshIdTokenFromStorage(storage: storage) { (error, token) -> () in
-            if error != nil {
-                self.showLock(animated: false)
-                return;
-            }
-            storage.idToken = token
-            self.showMainRoot()
-        }
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         return true
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return Application.sharedInstance.lock.handle(url, sourceApplication: sourceApplication)
+    func applicationWillResignActive(_ application: UIApplication) {
+        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
     }
     
-    @objc func startSessionNotification(notification: NSNotification) {
-        self.showMainRoot()
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
     
-    @objc func finishSessionNotification(notification: NSNotification) {
-        Application.sharedInstance.storage.clear()
-        self.showLock(animated: true)
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
     
-    private func showMainRoot() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateInitialViewController()
-        self.window?.rootViewController = controller
-        UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { }, completion: nil)
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
-    private func showLock(animated: Bool = false) {
-        let storage = Application.sharedInstance.storage
-        storage.clear()
-        let lock = Application.sharedInstance.lock.newLockViewController()
-        lock?.onAuthenticationBlock = { (profile, token) in
-            switch(profile, token) {
-            case let (.some(profile), .some(token)):
-                storage.save(token: token, profile: profile)
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: SessionNotification.Start.rawValue), object: nil)
-            default:
-                print("Either auth0 token or profile of the user was nil, please check your Auth0 Lock config")
-            }
-        }
-        self.window?.rootViewController = lock
-        if animated {
-            UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromLeft, animations: { }, completion: nil)
-        }
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+    
 }
-
