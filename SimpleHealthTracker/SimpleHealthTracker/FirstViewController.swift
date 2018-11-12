@@ -13,7 +13,12 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        let loginStatus = SessionManager.instance.getStatus();
+        if loginStatus == EnumSessionManagerStatus.notLoggedIn {
+            self.checkTokenAndLoginIfNoToken(callback: { x in })
+        } else  {
+            
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -23,7 +28,7 @@ class FirstViewController: UIViewController {
         // and allow the user to login
         let loginStatus = SessionManager.instance.getStatus();
         if loginStatus == EnumSessionManagerStatus.notLoggedIn {
-            self.showUIForLoginNeeded()
+            self.checkTokenAndLoginIfNoToken(callback: {x in})
         } else  {
      
         }
