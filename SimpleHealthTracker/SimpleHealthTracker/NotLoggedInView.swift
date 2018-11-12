@@ -66,6 +66,86 @@ class NotLoggedInView: UIView {
         self.ContentView.bringSubview(toFront: self.backHomeButton)
         
     }
-  
+}
+public extension UIView {
+    //https://stackoverflow.com/questions/35659714/loading-a-xib-file-to-a-uiview-swift
+    // load an xib into a view
+    // sample usage
+    // let view = CustomView.loadFromXib()
+    // let view = CustomView.loadFromXib(withOwner: self)
+    // let view = CustomView.loadFromXib(withOwner: self, options: [UINibExternalObjects: objects])
+    static func loadFromXib<T>(withOwner: Any? = nil, options: [AnyHashable : Any]? = nil) -> T where T: UIView {
+        
+        let bundle = Bundle(for: self)
+        let nib = UINib(nibName: "\(self)", bundle: bundle)
+        
+        guard let view = nib.instantiate(withOwner: withOwner, options: options).first as? T else {
+            fatalError("Could not load view from nib file.")
+        }
+        return view
+    }
     
 }
+
+
+public class NotLoggedInLabelFactory {
+    
+    internal var SignInOrSignUpHandler: (() -> ())?
+    var labelText: String
+    
+    // MARK: - init functions
+    public init() {
+        labelText = "Signin Or Signup"
+    }
+    
+    open func handleSignInOrSignUp(_ handler: @escaping () -> ()) {
+        self.SignInOrSignUpHandler = handler
+    }
+    
+    func getNotLoggedinLabel()->ActiveLabel {
+        
+        let notLoggedInActivelabel = ActiveLabel()
+        notLoggedInActivelabel.textAlignment = NSTextAlignment.center
+        
+        let customType = ActiveType.custom(pattern: "Sign In") // ActiveType.custom(pattern: "Sign in Or Register") //Looks for "are"
+        let customType2 = ActiveType.custom(pattern: "Sign Up") // ActiveType.custom(pattern: "Sign in Or Register") //Looks for "are"
+        
+        notLoggedInActivelabel.enabledTypes.append(customType)
+        notLoggedInActivelabel.enabledTypes.append(customType2)
+        //https://github.com/optonaut/ActiveLabel.swift/blob/master/ActiveLabelDemo/ViewController.swift
+        notLoggedInActivelabel.isUserInteractionEnabled = true
+        notLoggedInActivelabel.enabledTypes = [customType,customType2]
+        notLoggedInActivelabel.accessibilityIdentifier = "notLoggedInActivelabel"
+        
+        notLoggedInActivelabel.customize { label in
+            label.text = labelText;
+            label.numberOfLines = 0
+            label.lineSpacing = 4
+            label.textColor = UIColor.darkGray
+            label.customColor[customType] = UIColor.purple
+            label.customSelectedColor[customType] = UIColor.green
+            label.customColor[customType2] = UIColor.purple
+            label.customSelectedColor[customType2] = UIColor.green
+            
+            label.handleCustomTap(for: customType) { element in
+                guard let handler = self.SignInOrSignUpHandler else {
+                    return
+                }
+                handler()
+            }
+            label.handleCustomTap(for: customType2) { element in
+                guard let handler = self.SignInOrSignUpHandler else {
+                    return
+                }
+                handler()
+            }
+            
+        }
+        return notLoggedInActivelabel
+    }
+    
+    
+}
+
+
+
