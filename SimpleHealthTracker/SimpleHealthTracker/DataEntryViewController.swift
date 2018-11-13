@@ -19,16 +19,38 @@ class DataEntryViewController: UIViewController {
     @IBOutlet weak var btnUpdate: UIButton!
     
     private var entryDateTime:Date?
+    private let formatter = DateFormatter()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.formatter.dateFormat = "dd/MM/yyyy HH:mm"
         self.btnUpdate.addTarget(self, action: #selector(btnUpdateClick), for: .touchUpInside)
         self.txtEntryDateTime.delegate = self
         self.btnUpdate.isEnabled = false
+        self.entryDateTime = Date()
+        self.txtEntryDateTime.text = formatter.string(from: self.entryDateTime!)
         
         self.checkTokenAndLoginIfNoToken(callbackAfterLogin: { x in
             self.btnUpdate.isEnabled = true
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HealthEntry")
+            request.returnsObjectsAsFaults = false
+            do {
+                
+                let results = try context.fetch(request)
+                if results.count > 0 {
+                    
+                }
+                
+                MessageBox.show("Your Entry your saved ")
+            } catch {
+                MessageBox.showError("There was an error fatching your data :-( ")
+            }
+            
+            
         })
         
     }
@@ -36,14 +58,24 @@ class DataEntryViewController: UIViewController {
     @objc func btnUpdateClick(_ sender: Any!) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        let newEntry = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context)
+        let newEntry = NSEntityDescription.insertNewObject(forEntityName: "HealthEntry", into: context)
         
         newEntry.setValue( Int(self.txtCircumferance.text!), forKey:"circumferenceCm")
         newEntry.setValue( Int(self.txtFatPercent.text!), forKey: "fatPercentage")
         newEntry.setValue( Int(self.txtWeight.text!), forKey: "weightKg")
-        newEntry.setValue( SessionManager.instance.profile?.name, forKey: "username")
-        newEntry.setValue( self.entryDateTime, forKey: "EntryDateTime")
+        newEntry.setValue( SessionManager.instance.profile?.name, forKey: "userName")
+        newEntry.setValue( self.entryDateTime, forKey: "entryDateTime")
+        newEntry.setValue( nil, forKey: "synchedDateTime")
+        newEntry.setValue( Date(), forKey: "createdDateTime")
+        newEntry.setValue( Date(), forKey: "updatedDateTime")
         
+        do {
+            
+            try context.save()
+            MessageBox.show("Your Entry your saved ")
+        } catch {
+            MessageBox.showError("There was an error saving your data :-) ")
+        }
     }
     
     func datePickerTapped() {
@@ -65,10 +97,9 @@ class DataEntryViewController: UIViewController {
                         maximumDate: currentDate,
                         datePickerMode: .dateAndTime) { (date) in
                             if let dt = date {
-                                let formatter = DateFormatter()
-                                formatter.dateFormat = "dd/MM/yyyy HH:mm"
-                                self.txtEntryDateTime.text = formatter.string(from: dt)
                                 self.entryDateTime = dt
+                                self.txtEntryDateTime.text = self.formatter.string(from: self.entryDateTime!)
+                                
                             }
         }
     }

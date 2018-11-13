@@ -11,6 +11,8 @@
 		950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */; };
 		950FE1AF219AFBAC000C96D3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AE219AFBAC000C96D3 /* Entry.swift */; };
 		950FE1B2219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1B0219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld */; };
+		950FE1F2219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1F0219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.swift */; };
+		950FE1F3219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950FE1F1219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib */; };
 		954B919721809B3000ED7221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919621809B3000ED7221 /* AppDelegate.swift */; };
 		954B919E21809B3000ED7221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B919C21809B3000ED7221 /* Main.storyboard */; };
 		954B91A021809B3000ED7221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954B919F21809B3000ED7221 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 		950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		950FE1AE219AFBAC000C96D3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		950FE1B1219B04A2000C96D3 /* SimpleHealthEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleHealthEntry.xcdatamodel; sourceTree = "<group>"; };
+		950FE1F0219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatlhEntryCollectionViewCell.swift; sourceTree = "<group>"; };
+		950FE1F1219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeatlhEntryCollectionViewCell.xib; sourceTree = "<group>"; };
 		954B919321809B3000ED7221 /* SimpleHealthTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHealthTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B919621809B3000ED7221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954B919D21809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				954B91A421809B3000ED7221 /* Info.plist */,
 				A3D8555A219754BE00503A05 /* Auth0.plist */,
 				950FE1AE219AFBAC000C96D3 /* Entry.swift */,
+				950FE1F0219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.swift */,
+				950FE1F1219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib */,
 			);
 			path = SimpleHealthTracker;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 				954B91A021809B3000ED7221 /* Assets.xcassets in Resources */,
 				954B919E21809B3000ED7221 /* Main.storyboard in Resources */,
 				A3D8555B219754BE00503A05 /* Auth0.plist in Resources */,
+				950FE1F3219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +387,7 @@
 				95E28000219998CF000DDC9E /* SessionManager.swift in Sources */,
 				950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */,
 				950FE1B2219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld in Sources */,
+				950FE1F2219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
