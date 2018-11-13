@@ -28,8 +28,10 @@ class FirstViewController: UIViewController {
         // and allow the user to login
         let loginStatus = SessionManager.instance.getStatus();
         if loginStatus == EnumSessionManagerStatus.notLoggedIn {
-            self.checkTokenAndLoginIfNoToken(callback: {x in})
-        } else  {
+            self.checkTokenAndLoginIfNoToken(callback: {x in
+                
+            })
+        } else if loginStatus == EnumSessionManagerStatus.loggedInWithProfile {
      
         }
     }
