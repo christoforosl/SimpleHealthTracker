@@ -10,6 +10,7 @@
 		31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */; };
 		950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */; };
 		950FE1AF219AFBAC000C96D3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AE219AFBAC000C96D3 /* Entry.swift */; };
+		950FE1B2219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1B0219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld */; };
 		954B919721809B3000ED7221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919621809B3000ED7221 /* AppDelegate.swift */; };
 		954B919E21809B3000ED7221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B919C21809B3000ED7221 /* Main.storyboard */; };
 		954B91A021809B3000ED7221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954B919F21809B3000ED7221 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleHealthTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		950FE1AE219AFBAC000C96D3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		950FE1B1219B04A2000C96D3 /* SimpleHealthEntry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleHealthEntry.xcdatamodel; sourceTree = "<group>"; };
 		954B919321809B3000ED7221 /* SimpleHealthTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHealthTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B919621809B3000ED7221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954B919D21809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		954B919521809B3000ED7221 /* SimpleHealthTracker */ = {
 			isa = PBXGroup;
 			children = (
+				950FE1B0219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld */,
 				950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */,
 				95E280032199A89B000DDC9E /* NotLoggedInView.swift */,
 				95E280052199A8DF000DDC9E /* NotLoggedInView.xib */,
@@ -376,6 +379,7 @@
 				954B919721809B3000ED7221 /* AppDelegate.swift in Sources */,
 				95E28000219998CF000DDC9E /* SessionManager.swift in Sources */,
 				950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */,
+				950FE1B2219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,6 +685,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		950FE1B0219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				950FE1B1219B04A2000C96D3 /* SimpleHealthEntry.xcdatamodel */,
+			);
+			currentVersion = 950FE1B1219B04A2000C96D3 /* SimpleHealthEntry.xcdatamodel */;
+			path = SimpleHealthEntryDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 954B918B21809B3000ED7221 /* Project object */;
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Entry {
+public class DEntry {
     
     var EntryDateTime:Date?
     var WeightInKilos:Decimal?
