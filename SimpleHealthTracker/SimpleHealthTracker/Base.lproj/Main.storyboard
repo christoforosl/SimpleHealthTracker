@@ -194,6 +194,7 @@
                     <tabBarItem key="tabBarItem" title="Data" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="btnUpdate" destination="kHJ-b0-TUV" id="e6G-PL-ITW"/>
+                        <outlet property="collectionEntries" destination="WZb-I5-8yF" id="yhE-hq-P0h"/>
                         <outlet property="txtCircumferance" destination="YoG-Fp-2JR" id="g6L-2d-fLN"/>
                         <outlet property="txtEntryDateTime" destination="N4S-kh-Tyx" id="z2Y-bM-6K7"/>
                         <outlet property="txtFatPercent" destination="ylR-ad-uOx" id="XaH-gR-s4c"/>

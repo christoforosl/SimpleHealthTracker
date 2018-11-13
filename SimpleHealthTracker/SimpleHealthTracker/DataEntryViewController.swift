@@ -10,20 +10,27 @@ import UIKit
 import DatePickerDialog
 import CoreData
 
-class DataEntryViewController: UIViewController {
-
+class DataEntryViewController: UIViewController, UICollectionViewDataSource , UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+   
     @IBOutlet weak var txtEntryDateTime: UITextField!
     @IBOutlet weak var txtWeight: UITextField!
     @IBOutlet weak var txtCircumferance: UITextField!
     @IBOutlet weak var txtFatPercent: UITextField!
     @IBOutlet weak var btnUpdate: UIButton!
     
+    @IBOutlet weak var collectionEntries: UICollectionView!
     private var entryDateTime:Date?
     private let formatter = DateFormatter()
-    
+    private var data:NSArray?
+    private var unib = UINib(nibName: "HeatlhEntryCollectionViewCell", bundle: nil)
+        
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.collectionEntries.dataSource = self
+        self.collectionEntries.delegate = self
+        self.collectionEntries.register(self.unib, forCellWithReuseIdentifier: "HeatlhEntryCollectionViewCell")
+        
         self.formatter.dateFormat = "dd/MM/yyyy HH:mm"
         self.btnUpdate.addTarget(self, action: #selector(btnUpdateClick), for: .touchUpInside)
         self.txtEntryDateTime.delegate = self
@@ -40,12 +47,10 @@ class DataEntryViewController: UIViewController {
             request.returnsObjectsAsFaults = false
             do {
                 
-                let results = try context.fetch(request)
-                if results.count > 0 {
-                    
-                }
+                self.data = try context.fetch(request) as NSArray
+                self.collectionEntries.reloadData()
                 
-                MessageBox.show("Your Entry your saved ")
+                MessageBox.show("Entries Loaded:\(self.data!.count)")
             } catch {
                 MessageBox.showError("There was an error fatching your data :-( ")
             }
@@ -53,6 +58,27 @@ class DataEntryViewController: UIViewController {
             
         })
         
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50);
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.data == nil ? 0 : self.data!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "HeatlhEntryCollectionViewCell", for: indexPath) as! HeatlhEntryCollectionViewCell
+        
+        cell.backgroundColor = UIColor.clear
+        
+        if ( self.data!.count >= (indexPath.row + 1) ) {
+            cell.configCell(entry: self.data![indexPath.row] as! HealthEntry, entryNo: (indexPath.row + 1))
+            
+        }
+        
+        return cell;
     }
     
     @objc func btnUpdateClick(_ sender: Any!) {

@@ -19,11 +19,11 @@ class HeatlhEntryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.formatter.dateFormat = "dd/MMM/yyyy HH:mm"
+        self.formatter.dateFormat = "dd MMM yyyy HH:mm"
         // Initialization code
     }
 
-    public func configure(entry:HealthEntry) {
+    public func configCell(entry:HealthEntry, entryNo:Int) {
         
         self.EntryDate.text = formatter.string(from: entry.entryDateTime!)
         self.Weight.text = String( entry.weightKg )
