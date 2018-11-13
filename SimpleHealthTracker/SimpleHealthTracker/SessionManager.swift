@@ -14,7 +14,7 @@ enum SessionManagerError: Error {
 
 enum EnumSessionManagerStatus {
     case notLoggedIn // user is not logged in
-    case loggedInNotProfile // user is logged in but no profile is present
+    case loggedInWithNoProfile // user is logged in but no profile is present
     case loggedInWithProfile // user logged in with profile
 }
 
@@ -23,14 +23,24 @@ class SessionManager {
     private static let ACCESS_TOKEN_NAME = "access_token"
 	private static let REFRESH_TOKEN_NAME = "refresh_token"
 	
-    static let instance = SessionManager()
-    let keychain = A0SimpleKeychain(service: "Auth0")
-    var profile: Profile?
+    public static let instance = SessionManager()
+    
+    private let keychain = A0SimpleKeychain(service: "Auth0")
+    private var _profile: Profile?
     
     private var profileImage: UIImage?
     
     private init () {
     
+    }
+    
+    public var profile:Profile? {
+        get {
+            return self._profile
+        }
+        set {
+            self._profile = newValue
+        }
     }
     
     func getStatus() -> EnumSessionManagerStatus {
@@ -40,7 +50,7 @@ class SessionManager {
         } else {
             if self.getAccessToken() != nil {
                 // this is the case where we have a user from a previous session of the app.
-                return EnumSessionManagerStatus.loggedInNotProfile
+                return EnumSessionManagerStatus.loggedInWithNoProfile
             } else {
                 return EnumSessionManagerStatus.notLoggedIn
                 // no profile and no saved access token from previos session

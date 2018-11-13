@@ -1,24 +1,6 @@
 // ProfileViewController.swift
 //
 // Copyright (c) 2015 Auth0 (http://auth0.com)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 import UIKit
 import Lock
@@ -40,8 +22,7 @@ class ProfileViewController: UIViewController {
 
     weak var currentField: UITextField?
     var keyboardFrame: CGRect?
-    var profile: Profile!
-
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -102,7 +83,6 @@ class ProfileViewController: UIViewController {
     @IBAction func saveProfile(sender: AnyObject) {
         hideKeyboard()
         
-        
         if let idToken = SessionManager.instance.getAccessToken() {
            
             Auth0
@@ -144,13 +124,16 @@ class ProfileViewController: UIViewController {
     }
 
     private func updateUI() {
-        self.title = self.profile.name
-        self.avatar.setImageWith(self.profile.pictureURL)
-        self.firstName.text = self.profile.givenName
-        self.lastName.text = self.profile.familyName
-        self.email.text = self.profile.email
-        self.address.text = self.profile.userMetadata["address"] as? String
-        self.birthday.text = self.profile.userMetadata["birthday"] as? String
+        
+        let profile = SessionManager.instance.profile!
+        
+        self.title = profile.name
+        self.avatar.setImageWith(profile.pictureURL)
+        self.firstName.text = profile.givenName
+        self.lastName.text = profile.familyName
+        self.email.text = profile.email
+        self.address.text = profile.userMetadata["address"] as? String
+        self.birthday.text = profile.userMetadata["birthday"] as? String
     }
 }
 

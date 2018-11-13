@@ -12,28 +12,15 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let loginStatus = SessionManager.instance.getStatus();
-        if loginStatus == EnumSessionManagerStatus.notLoggedIn {
-            self.checkTokenAndLoginIfNoToken(callback: { x in })
-        } else  {
+        self.checkTokenAndLoginIfNoToken(callbackAfterLogin: { x in
             
-        }
+        })
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         
-        // if the user is not logged in we need to show the not logged in overlay
-        // and allow the user to login
-        let loginStatus = SessionManager.instance.getStatus();
-        if loginStatus == EnumSessionManagerStatus.notLoggedIn {
-            self.checkTokenAndLoginIfNoToken(callback: {x in
-                
-            })
-        } else if loginStatus == EnumSessionManagerStatus.loggedInWithProfile {
-     
-        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

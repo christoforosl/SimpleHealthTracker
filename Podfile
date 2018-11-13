@@ -14,5 +14,6 @@ pod 'JWTDecode'
 pod 'AFNetworking'
 pod 'SwiftMessages','4.1.2'
 pod 'ActiveLabel','0.9'
+pod 'DatePickerDialog'
 end
 

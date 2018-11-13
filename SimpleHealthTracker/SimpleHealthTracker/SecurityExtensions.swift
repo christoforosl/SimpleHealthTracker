@@ -63,26 +63,26 @@ extension UIViewController {
     
     // check status of user login, and show the login screen.
     // call callback after sucessfull login or login, passing the result
-    func checkTokenAndLoginIfNoToken( callback: @escaping (EnumLoginResult) -> ()) {
+    func checkTokenAndLoginIfNoToken( callbackAfterLogin: @escaping (EnumLoginResult) -> ()) {
     
-        if SessionManager.instance.getStatus() == EnumSessionManagerStatus.loggedInNotProfile {
+        if SessionManager.instance.getStatus() == EnumSessionManagerStatus.loggedInWithNoProfile {
             
             // try to retrieve the profile using the stored session variable
             SessionManager.instance.retrieveProfile { error in
                 DispatchQueue.main.async {
                     if (error != nil)  {
                         print( "Error: \(error.debugDescription)")
-                        return self.showLogin(callback: callback)
+                        return self.showLogin(callback: callbackAfterLogin)
                     } else {
-                        callback(EnumLoginResult.loggedin)
+                        callbackAfterLogin(EnumLoginResult.loggedin)
                     }
                 }
             }
         } else if SessionManager.instance.getStatus() == EnumSessionManagerStatus.loggedInWithProfile {
-            callback(EnumLoginResult.loggedin)
+            callbackAfterLogin(EnumLoginResult.loggedin)
             
         } else if SessionManager.instance.getStatus() == EnumSessionManagerStatus.notLoggedIn {
-            return self.showLogin(callback: callback)
+            return self.showLogin(callback: callbackAfterLogin)
         }
         
     }
