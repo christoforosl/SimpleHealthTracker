@@ -55,25 +55,31 @@
             </objects>
             <point key="canvasLocation" x="90.400000000000006" y="1131.1844077961021"/>
         </scene>
-        <!--First-->
+        <!--Data-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SimpleHealthTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="DataEntryViewController" customModule="SimpleHealthTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w1c-xJ-G3b" userLabel="Content Stack View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="220.5"/>
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-4w-H30">
-                                        <rect key="frame" x="27.5" y="0.0" width="320" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="562076952.82653499">
-                                            <!--2018-10-24 12:29:12 +0000-->
-                                        </date>
-                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Date/Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmR-y6-MSR">
+                                        <rect key="frame" x="123" y="0.0" width="129" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Date/Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-kh-Tyx">
+                                        <rect key="frame" x="100" y="30.5" width="175" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zTW-zB-cbF" userLabel="Weight Stack View">
-                                        <rect key="frame" x="132.5" y="226" width="110" height="30"/>
+                                        <rect key="frame" x="132.5" y="70.5" width="110" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ukc-9v-dYw">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -96,7 +102,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QZ8-bH-JAJ" userLabel="Circumf Stack View">
-                                        <rect key="frame" x="132.5" y="266" width="110" height="30"/>
+                                        <rect key="frame" x="132.5" y="110.5" width="110" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Circumferance" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YoG-Fp-2JR">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -119,7 +125,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AcR-of-gEj" userLabel="Fat Percent Stack View">
-                                        <rect key="frame" x="132.5" y="306" width="110" height="30"/>
+                                        <rect key="frame" x="132.5" y="150.5" width="110" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fat %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ylR-ad-uOx">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -142,21 +148,28 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHJ-b0-TUV">
-                                        <rect key="frame" x="162" y="346" width="51" height="30"/>
+                                        <rect key="frame" x="162" y="190.5" width="51" height="30"/>
                                         <state key="normal" title="Update"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="N4S-kh-Tyx" firstAttribute="leading" secondItem="w1c-xJ-G3b" secondAttribute="leading" constant="100" id="7sE-zH-UXj"/>
+                                    <constraint firstAttribute="trailing" secondItem="N4S-kh-Tyx" secondAttribute="trailing" constant="100" id="f6d-aK-arr"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="w1c-xJ-G3b" secondAttribute="trailing" id="pSN-nu-cR7"/>
                             <constraint firstItem="w1c-xJ-G3b" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="wCh-fe-NAE"/>
-                            <constraint firstItem="w1c-xJ-G3b" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="wRi-4M-pRJ"/>
+                            <constraint firstItem="w1c-xJ-G3b" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="50" id="wRi-4M-pRJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Data" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="entryDateTime" destination="N4S-kh-Tyx" id="z2Y-bM-6K7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

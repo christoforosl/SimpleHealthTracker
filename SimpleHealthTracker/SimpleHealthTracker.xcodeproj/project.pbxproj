@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */; };
+		950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */; };
 		954B919721809B3000ED7221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919621809B3000ED7221 /* AppDelegate.swift */; };
-		954B919921809B3000ED7221 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919821809B3000ED7221 /* FirstViewController.swift */; };
 		954B919E21809B3000ED7221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B919C21809B3000ED7221 /* Main.storyboard */; };
 		954B91A021809B3000ED7221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954B919F21809B3000ED7221 /* Assets.xcassets */; };
 		954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B91A121809B3000ED7221 /* LaunchScreen.storyboard */; };
@@ -45,9 +45,9 @@
 /* Begin PBXFileReference section */
 		54311A66630383BDCFF7B57A /* Pods-SimpleHealthTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.release.xcconfig"; sourceTree = "<group>"; };
 		6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleHealthTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		954B919321809B3000ED7221 /* SimpleHealthTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHealthTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B919621809B3000ED7221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		954B919821809B3000ED7221 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		954B919D21809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954B919F21809B3000ED7221 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954B91A221809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,13 +130,13 @@
 		954B919521809B3000ED7221 /* SimpleHealthTracker */ = {
 			isa = PBXGroup;
 			children = (
+				950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */,
 				95E280032199A89B000DDC9E /* NotLoggedInView.swift */,
 				95E280052199A8DF000DDC9E /* NotLoggedInView.xib */,
 				95E280012199A84B000DDC9E /* SecurityExtensions.swift */,
 				95E27FFF219998CF000DDC9E /* SessionManager.swift */,
 				A3D855582197409F00503A05 /* MessageBox.swift */,
 				954B919621809B3000ED7221 /* AppDelegate.swift */,
-				954B919821809B3000ED7221 /* FirstViewController.swift */,
 				9563577121959CEE0027F183 /* ProfileViewController.swift */,
 				954B919C21809B3000ED7221 /* Main.storyboard */,
 				954B919F21809B3000ED7221 /* Assets.xcassets */,
@@ -371,7 +371,7 @@
 				A3D85559219740A000503A05 /* MessageBox.swift in Sources */,
 				954B919721809B3000ED7221 /* AppDelegate.swift in Sources */,
 				95E28000219998CF000DDC9E /* SessionManager.swift in Sources */,
-				954B919921809B3000ED7221 /* FirstViewController.swift in Sources */,
+				950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
