@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EntryDate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWc-iO-5xt" userLabel="EntryDate">
-                        <rect key="frame" x="5" y="0.0" width="150" height="21"/>
+                        <rect key="frame" x="10" y="0.0" width="150" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="Rcr-jj-eW6"/>
                         </constraints>
@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faT-85-Lig" userLabel="Weight">
-                        <rect key="frame" x="156" y="0.0" width="75" height="21"/>
+                        <rect key="frame" x="161" y="0.0" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="gNj-yg-Pid"/>
                         </constraints>
@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyi-KO-DHv" userLabel="Circumference">
-                        <rect key="frame" x="232" y="0.0" width="75" height="21"/>
+                        <rect key="frame" x="237" y="0.0" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="ztD-3C-WJq"/>
                         </constraints>
@@ -47,7 +47,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZg-Ua-u9P" userLabel="Fat">
-                        <rect key="frame" x="308" y="0.0" width="75" height="21"/>
+                        <rect key="frame" x="313" y="0.0" width="75" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="75" id="7kb-9v-Avs"/>
                         </constraints>
@@ -65,7 +65,7 @@
                 <constraint firstItem="GZg-Ua-u9P" firstAttribute="leading" secondItem="Vyi-KO-DHv" secondAttribute="trailing" constant="1" id="I6a-j8-3Ch"/>
                 <constraint firstAttribute="bottom" secondItem="GZg-Ua-u9P" secondAttribute="bottom" id="NZg-vy-sUE"/>
                 <constraint firstItem="Vyi-KO-DHv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Shl-g5-aOG"/>
-                <constraint firstItem="tWc-iO-5xt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="ZzR-Ym-Qc4"/>
+                <constraint firstItem="tWc-iO-5xt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ZzR-Ym-Qc4"/>
                 <constraint firstAttribute="bottom" secondItem="faT-85-Lig" secondAttribute="bottom" id="jPO-fg-tMT"/>
                 <constraint firstAttribute="bottom" secondItem="tWc-iO-5xt" secondAttribute="bottom" id="jtU-JN-wiX"/>
                 <constraint firstItem="Vyi-KO-DHv" firstAttribute="leading" secondItem="faT-85-Lig" secondAttribute="trailing" constant="1" id="w6Q-HX-htq"/>
