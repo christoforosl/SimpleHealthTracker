@@ -12,7 +12,13 @@ import DatePickerDialog
 class DataEntryViewController: UIViewController {
 
     @IBOutlet weak var entryDateTime: UITextField!
+    @IBOutlet weak var txtWeight: UITextField!
+    @IBOutlet weak var txtCircumferance: UITextField!
+    @IBOutlet weak var txtFatPercent: UITextField!
+    @IBOutlet weak var btnUpdate: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.entryDateTime.delegate = self
 
@@ -28,20 +34,21 @@ class DataEntryViewController: UIViewController {
         dateComponents.month = -3
         let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
         
-        let datePicker = DatePickerDialog(textColor: .red,
-                                          buttonColor: .red,
+        let datePicker = DatePickerDialog(textColor: .black,
+                                          buttonColor: .blue,
                                           font: UIFont.boldSystemFont(ofSize: 17),
                                           showCancelButton: true)
         
-        datePicker.show("DatePickerDialog",
+        
+        datePicker.show("Select Entry Date/Time",
                         doneButtonTitle: "Done",
                         cancelButtonTitle: "Cancel",
                         minimumDate: threeMonthAgo,
                         maximumDate: currentDate,
-                        datePickerMode: .date) { (date) in
+                        datePickerMode: .dateAndTime) { (date) in
                             if let dt = date {
                                 let formatter = DateFormatter()
-                                formatter.dateFormat = "MM/dd/yyyy"
+                                formatter.dateFormat = "dd/MM/yyyy HH:mm"
                                 self.entryDateTime.text = formatter.string(from: dt)
                             }
         }

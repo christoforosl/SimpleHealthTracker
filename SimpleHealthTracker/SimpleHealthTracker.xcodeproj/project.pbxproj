@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		31A449908DB6F5260464CCF7 /* Pods_SimpleHealthTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */; };
 		950FE1AD219AE9E4000C96D3 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */; };
+		950FE1AF219AFBAC000C96D3 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950FE1AE219AFBAC000C96D3 /* Entry.swift */; };
 		954B919721809B3000ED7221 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B919621809B3000ED7221 /* AppDelegate.swift */; };
 		954B919E21809B3000ED7221 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954B919C21809B3000ED7221 /* Main.storyboard */; };
 		954B91A021809B3000ED7221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954B919F21809B3000ED7221 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		54311A66630383BDCFF7B57A /* Pods-SimpleHealthTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.release.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.release.xcconfig"; sourceTree = "<group>"; };
 		6447680E0729C333D9720D4B /* Pods_SimpleHealthTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleHealthTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
+		950FE1AE219AFBAC000C96D3 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		954B919321809B3000ED7221 /* SimpleHealthTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleHealthTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B919621809B3000ED7221 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954B919D21809B3000ED7221 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				954B91A121809B3000ED7221 /* LaunchScreen.storyboard */,
 				954B91A421809B3000ED7221 /* Info.plist */,
 				A3D8555A219754BE00503A05 /* Auth0.plist */,
+				950FE1AE219AFBAC000C96D3 /* Entry.swift */,
 			);
 			path = SimpleHealthTracker;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950FE1AF219AFBAC000C96D3 /* Entry.swift in Sources */,
 				9563577221959CEE0027F183 /* ProfileViewController.swift in Sources */,
 				95E280022199A84B000DDC9E /* SecurityExtensions.swift in Sources */,
 				95E280042199A89C000DDC9E /* NotLoggedInView.swift in Sources */,
