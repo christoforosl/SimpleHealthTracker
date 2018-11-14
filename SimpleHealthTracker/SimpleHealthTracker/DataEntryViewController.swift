@@ -12,6 +12,7 @@ import CoreData
 
 class DataEntryViewController: UIViewController, UICollectionViewDataSource , UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
    
+    @IBOutlet weak var btnProfile: UIBarButtonItem!
     @IBOutlet weak var txtEntryDateTime: UITextField!
     @IBOutlet weak var txtWeight: UITextField!
     @IBOutlet weak var txtCircumferance: UITextField!
@@ -23,7 +24,7 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
     private let formatter = DateFormatter()
     private var data:NSArray?
     private var unib = UINib(nibName: "HeatlhEntryCollectionViewCell", bundle: nil)
-        
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -40,17 +41,65 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated);
+        self.checkLoginStatus(handler: {
+            self.loadDataFromLocalStorage()
+        })
+        
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    @objc func rightNavBarItemAction() {
+        
+    }
+    
     func loadDataFromLocalStorage() {
+        
+        self.btnUpdate.isEnabled = true
+        let img = SessionManager.instance.getProfileImage()
+        
+        let button = UIButton(type: .custom)
+        button.frame = CGRect(x: 0, y: 0, width: 35, height: 35 )
+        button.backgroundColor = UIColor.blue
+        button.setImage(img, for: .normal)
+        
+        let view = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 35, height: 35)));
+        view.addSubview(button);
+        view.backgroundColor = UIColor.yellow
+        
+        let leftButton = UIBarButtonItem(customView: view)
+        self.navigationItem.rightBarButtonItem = leftButton
+        
+//        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 25.0, height: 25.0))
+//        imageView.image = img //.withRenderingMode(.alwaysOriginal)
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.layer.cornerRadius = 12.5
+//        imageView.layer.masksToBounds = true
+//        imageView.backgroundColor = UIColor.red
+//        self.btnProfile.customView = imageView
+//
+//        let barButton = UIBarButtonItem()
+//        barButton.setBackButtonBackgroundImage(img, for: .normal, barMetrics: .default)
+//        navigationItem.setLeftBarButton(barButton, animated: false)
+       
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HealthEntry")
+        
         request.returnsObjectsAsFaults = false
+        
         do {
             
             self.data = try context.fetch(request) as NSArray
             self.collectionEntries.reloadData()
             
-            MessageBox.show("Entries Loaded:\(self.data!.count)")
+            //MessageBox.show("Entries Loaded:\(self.data!.count)")
         } catch {
             MessageBox.showError("There was an error fatching your data :-( ")
         }
@@ -127,17 +176,7 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
         }
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated);
-        self.checkLoginStatus()
-        
-        
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 
 }
 extension DataEntryViewController: UITextFieldDelegate {

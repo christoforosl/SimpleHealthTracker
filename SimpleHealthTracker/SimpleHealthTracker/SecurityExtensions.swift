@@ -96,7 +96,7 @@ extension UIViewController {
     }
     
     
-    func checkLoginStatus() {
+    func checkLoginStatus( handler: @escaping () -> Void ) {
         
         let loginStatus = SessionManager.instance.getStatus();
         
@@ -109,13 +109,13 @@ extension UIViewController {
                     if (error != nil)  {
                         
                     } else {
-                        self.loadDataFromLocalStorage()
+                        handler()
                     }
                 }
             }
         } else  {
-            self.btnUpdate.isEnabled = true
-            self.loadDataFromLocalStorage()
+            
+            handler()
             
         }
         

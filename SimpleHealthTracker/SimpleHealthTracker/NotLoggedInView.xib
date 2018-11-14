@@ -80,6 +80,6 @@
         </view>
     </objects>
     <resources>
-        <image name="StoryBoardLogo" width="600" height="561"/>
+        <image name="StoryBoardLogo" width="600" height="600"/>
     </resources>
 </document>
