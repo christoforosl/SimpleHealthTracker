@@ -95,7 +95,9 @@ public class NotLoggedInLabelFactory {
     
     // MARK: - init functions
     public init() {
-        labelText = "Signin Or Signup"
+        let SigninOrSignup = "Hey there!!\nPlease Sign In Or Sign Up\n to start recording your data!";
+
+        labelText = SigninOrSignup
     }
     
     open func handleSignInOrSignUp(_ handler: @escaping () -> ()) {

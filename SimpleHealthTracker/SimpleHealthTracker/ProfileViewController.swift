@@ -30,11 +30,14 @@ class ProfileViewController: UIViewController {
         self.avatar.layer.cornerRadius = 50
         self.avatar.layer.masksToBounds = true
 
-        updateUI()
-
         let center = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardShown), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 
     deinit {

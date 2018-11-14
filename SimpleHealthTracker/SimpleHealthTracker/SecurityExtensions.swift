@@ -43,12 +43,20 @@ extension UIViewController {
     func showUIForLoginNeeded() -> Void {
         
         DispatchQueue.main.async {
+            
+            let vtag = self.view.viewWithTag(1201)
+            if vtag != nil {
+                return
+            }
+            
             let nlview = NotLoggedInView(frame:self.view.frame)
             
             nlview.backHomeButton.addTarget(self, action: #selector( self.goHome ), for: .touchUpInside)
             nlview.translatesAutoresizingMaskIntoConstraints = true
             nlview.autoresizingMask = []
             nlview.frame = self.view.frame
+            nlview.tag = 1201
+            
             nlview.handleSignInOrSignUp({
                 self.showLogin(callback: {result in
                     if result == EnumLoginResult.loggedin {
@@ -86,6 +94,33 @@ extension UIViewController {
         }
         
     }
+    
+    
+    func checkLoginStatus() {
+        
+        let loginStatus = SessionManager.instance.getStatus();
+        
+        if loginStatus == EnumSessionManagerStatus.notLoggedIn {
+            self.showUIForLoginNeeded()
+            
+        } else if loginStatus == EnumSessionManagerStatus.loggedInWithNoProfile {
+            SessionManager.instance.retrieveProfile { error in
+                DispatchQueue.main.async {
+                    if (error != nil)  {
+                        
+                    } else {
+                        self.loadDataFromLocalStorage()
+                    }
+                }
+            }
+        } else  {
+            self.btnUpdate.isEnabled = true
+            self.loadDataFromLocalStorage()
+            
+        }
+        
+    }
+    
     
     func showLogin(callback: @escaping (EnumLoginResult) ->Void ) {
         

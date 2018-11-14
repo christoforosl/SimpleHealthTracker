@@ -38,27 +38,24 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
         self.entryDateTime = Date()
         self.txtEntryDateTime.text = formatter.string(from: self.entryDateTime!)
         
-        self.checkTokenAndLoginIfNoToken(callbackAfterLogin: { x in
-            self.btnUpdate.isEnabled = true
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HealthEntry")
-            request.returnsObjectsAsFaults = false
-            do {
-                
-                self.data = try context.fetch(request) as NSArray
-                self.collectionEntries.reloadData()
-                
-                MessageBox.show("Entries Loaded:\(self.data!.count)")
-            } catch {
-                MessageBox.showError("There was an error fatching your data :-( ")
-            }
-            
-            
-        })
-        
     }
+    
+    func loadDataFromLocalStorage() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "HealthEntry")
+        request.returnsObjectsAsFaults = false
+        do {
+            
+            self.data = try context.fetch(request) as NSArray
+            self.collectionEntries.reloadData()
+            
+            MessageBox.show("Entries Loaded:\(self.data!.count)")
+        } catch {
+            MessageBox.showError("There was an error fatching your data :-( ")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 50);
     }
@@ -131,7 +128,10 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated);
+        self.checkLoginStatus()
+        
         
     }
     override func didReceiveMemoryWarning() {

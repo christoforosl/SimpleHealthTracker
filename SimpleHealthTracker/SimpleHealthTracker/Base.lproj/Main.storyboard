@@ -213,8 +213,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-y3-No3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-y3-No3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1t-Wn-C17">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
@@ -226,8 +226,8 @@
                                                     <constraint firstAttribute="height" constant="100" id="oAz-9O-wLw"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxj-vR-k7d">
-                                                <rect key="frame" x="264" y="158" width="72" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxj-vR-k7d">
+                                                <rect key="frame" x="152" y="158" width="71" height="30"/>
                                                 <state key="normal" title="Edit Photo">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -293,6 +293,7 @@
                                             <constraint firstItem="QtD-ZY-inU" firstAttribute="top" secondItem="a30-ce-rTi" secondAttribute="bottom" constant="30" id="VCe-mA-LJm"/>
                                             <constraint firstItem="gPi-rI-eI6" firstAttribute="top" secondItem="i5k-hT-Tmb" secondAttribute="bottom" constant="20" id="Y3x-H3-hOg"/>
                                             <constraint firstAttribute="centerX" secondItem="kxj-vR-k7d" secondAttribute="centerX" id="bEF-FK-vSW"/>
+                                            <constraint firstItem="kxj-vR-k7d" firstAttribute="centerX" secondItem="C1t-Wn-C17" secondAttribute="centerX" id="cy1-7c-GjT"/>
                                             <constraint firstItem="gPi-rI-eI6" firstAttribute="trailing" secondItem="i5k-hT-Tmb" secondAttribute="trailing" constant="2" id="hzL-YD-Old"/>
                                             <constraint firstItem="i5k-hT-Tmb" firstAttribute="top" secondItem="kxj-vR-k7d" secondAttribute="bottom" constant="25" id="k74-ly-MbD"/>
                                             <constraint firstItem="gPi-rI-eI6" firstAttribute="trailing" secondItem="QtD-ZY-inU" secondAttribute="trailing" constant="2" id="pcC-Q3-2Q4"/>
@@ -304,6 +305,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="900" id="8Y9-nh-m8m"/>
                                     <constraint firstItem="C1t-Wn-C17" firstAttribute="leading" secondItem="DeO-y3-No3" secondAttribute="leading" id="Bce-Gm-KiM"/>
                                     <constraint firstItem="C1t-Wn-C17" firstAttribute="top" secondItem="DeO-y3-No3" secondAttribute="top" id="eTv-4u-3OK"/>
                                     <constraint firstAttribute="trailing" secondItem="C1t-Wn-C17" secondAttribute="trailing" id="x3m-dZ-POi"/>
