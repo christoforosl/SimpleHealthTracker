@@ -261,11 +261,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VJz-Q3-JBh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="M3s-Gk-pM7"/>
+                    <navigationItem key="navigationItem" title="User Profile" id="M3s-Gk-pM7"/>
                     <connections>
+                        <outlet property="avatar" destination="wgd-Ac-iKw" id="pJQ-89-DTD"/>
                         <outlet property="firstName" destination="i5k-hT-Tmb" id="Ul2-4i-YrB"/>
                         <outlet property="lastName" destination="gPi-rI-eI6" id="QOL-vy-PUz"/>
-                        <outlet property="avatar" destination="wgd-Ac-iKw" id="d7p-es-D9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
