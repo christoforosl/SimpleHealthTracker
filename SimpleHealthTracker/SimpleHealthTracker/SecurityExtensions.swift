@@ -40,7 +40,7 @@ extension UIViewController {
     /**
     * overlays the notLoggedInView onto the current view.
     **/
-    func showUIForLoginNeeded() -> Void {
+    func showUIForLoginNeeded(callbackAfterLogin: @escaping () -> ()  ) -> Void {
         
         DispatchQueue.main.async {
             
@@ -61,6 +61,7 @@ extension UIViewController {
                 self.showLogin(callback: {result in
                     if result == EnumLoginResult.loggedin {
                         nlview.removeFromSuperview()
+                        callbackAfterLogin()
                     }
                 })
             })
@@ -101,13 +102,13 @@ extension UIViewController {
         let loginStatus = SessionManager.instance.getStatus();
         
         if loginStatus == EnumSessionManagerStatus.notLoggedIn {
-            self.showUIForLoginNeeded()
+            self.showUIForLoginNeeded(callbackAfterLogin: handler)
             
         } else if loginStatus == EnumSessionManagerStatus.loggedInWithNoProfile {
             SessionManager.instance.retrieveProfile { error in
                 DispatchQueue.main.async {
                     if (error != nil)  {
-                        
+                        MessageBox.showError(error.debugDescription)
                     } else {
                         handler()
                     }

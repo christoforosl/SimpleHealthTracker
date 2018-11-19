@@ -11,50 +11,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="GillSans.ttc">
-            <string>GillSans</string>
+        <array key="Gotham-Bold_0.otf">
+            <string>Gotham-Bold</string>
+        </array>
+        <array key="Gotham-Book.otf">
+            <string>Gotham-Book</string>
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="kZZ-Bp-ibf">
-            <objects>
-                <viewController storyboardIdentifier="LoadingController" id="KSZ-Wh-cRl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6Wt-bS-xMQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Gx-bc-mjC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NcW-NA-zRe">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StoryBoardLogo" translatesAutoresizingMaskIntoConstraints="NO" id="54C-Zd-eXd">
-                                <rect key="frame" x="37" y="177" width="300" height="312"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Health Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSr-CP-ntB">
-                                <rect key="frame" x="5" y="537" width="365" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PXT-Mt-g3H"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BEX-Hk-V2A" firstAttribute="trailing" secondItem="DSr-CP-ntB" secondAttribute="trailing" constant="5" id="6gk-i5-U93"/>
-                            <constraint firstItem="DSr-CP-ntB" firstAttribute="leading" secondItem="BEX-Hk-V2A" secondAttribute="leading" constant="5" id="eiM-8M-Ffu"/>
-                            <constraint firstItem="5Gx-bc-mjC" firstAttribute="top" secondItem="DSr-CP-ntB" secondAttribute="bottom" constant="100" id="rFX-C9-iLh"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="BEX-Hk-V2A"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lqF-SH-c9T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="90.400000000000006" y="1131.1844077961021"/>
-        </scene>
         <!--Health Entry-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -64,22 +28,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w1c-xJ-G3b" userLabel="Content Stack View">
-                                <rect key="frame" x="0.0" y="100" width="375" height="480.5"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="479"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Date/Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmR-y6-MSR">
-                                        <rect key="frame" x="123" y="0.0" width="129" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="144.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Date/Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4S-kh-Tyx">
-                                        <rect key="frame" x="100" y="30.5" width="175" height="30"/>
+                                        <rect key="frame" x="100" y="27" width="175" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zTW-zB-cbF" userLabel="Weight Stack View">
-                                        <rect key="frame" x="132.5" y="70.5" width="110" height="30"/>
+                                        <rect key="frame" x="130" y="67" width="115" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weight" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ukc-9v-dYw">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -91,18 +55,18 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-lB-n0I">
-                                                <rect key="frame" x="85" y="0.0" width="25" height="30"/>
+                                                <rect key="frame" x="85" y="0.0" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="k7F-vZ-kaj"/>
+                                                    <constraint firstAttribute="width" constant="30" id="k7F-vZ-kaj"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QZ8-bH-JAJ" userLabel="Circumf Stack View">
-                                        <rect key="frame" x="132.5" y="110.5" width="110" height="30"/>
+                                        <rect key="frame" x="130" y="107" width="115" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Circumferance" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YoG-Fp-2JR">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -114,18 +78,18 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icH-MS-fsh">
-                                                <rect key="frame" x="85" y="0.0" width="25" height="30"/>
+                                                <rect key="frame" x="85" y="0.0" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="qcg-GY-yvV"/>
+                                                    <constraint firstAttribute="width" constant="30" id="qcg-GY-yvV"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AcR-of-gEj" userLabel="Fat Percent Stack View">
-                                        <rect key="frame" x="132.5" y="150.5" width="110" height="30"/>
+                                        <rect key="frame" x="130" y="147" width="115" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Fat %" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ylR-ad-uOx">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
@@ -137,22 +101,23 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFh-UN-nl4">
-                                                <rect key="frame" x="85" y="0.0" width="25" height="30"/>
+                                                <rect key="frame" x="85" y="0.0" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="8De-21-fsE"/>
+                                                    <constraint firstAttribute="width" constant="30" id="8De-21-fsE"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHJ-b0-TUV">
-                                        <rect key="frame" x="162" y="190.5" width="51" height="30"/>
+                                        <rect key="frame" x="155.5" y="187" width="64" height="32"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
                                         <state key="normal" title="Update"/>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WZb-I5-8yF" userLabel="Entries Collection View">
-                                        <rect key="frame" x="10" y="230.5" width="355" height="250"/>
+                                        <rect key="frame" x="10" y="229" width="355" height="250"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="kkZ-R9-B2j"/>
@@ -191,11 +156,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Health Entry" id="IIr-Tj-Zfu">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="done" id="iCP-ff-264"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Health Entry" id="IIr-Tj-Zfu"/>
                     <connections>
-                        <outlet property="btnProfile" destination="iCP-ff-264" id="P50-nk-xxY"/>
                         <outlet property="btnUpdate" destination="kHJ-b0-TUV" id="e6G-PL-ITW"/>
                         <outlet property="collectionEntries" destination="WZb-I5-8yF" id="yhE-hq-P0h"/>
                         <outlet property="txtCircumferance" destination="YoG-Fp-2JR" id="g6L-2d-fLN"/>
@@ -227,31 +189,37 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" tag="601" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPi-rI-eI6">
-                                        <rect key="frame" x="151" y="100" width="73" height="30"/>
+                                        <rect key="frame" x="140.5" y="100" width="94.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cly-BP-uxq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="600" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5k-hT-Tmb">
-                                        <rect key="frame" x="150.5" y="130" width="74" height="30"/>
+                                        <rect key="frame" x="139.5" y="130" width="96.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="eS6-zr-ZKm"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="600" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NCD-6A-DUU" userLabel="Email">
-                                        <rect key="frame" x="168.5" y="160" width="38.5" height="30"/>
+                                        <rect key="frame" x="162.5" y="160" width="50.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WtR-XN-JXe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-54-h3f">
+                                <rect key="frame" x="131" y="563" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="17"/>
+                                <state key="normal" title="Logout"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -264,8 +232,10 @@
                     <navigationItem key="navigationItem" title="User Profile" id="M3s-Gk-pM7"/>
                     <connections>
                         <outlet property="avatar" destination="wgd-Ac-iKw" id="pJQ-89-DTD"/>
+                        <outlet property="btnLogout" destination="VOF-54-h3f" id="upG-ws-9TB"/>
                         <outlet property="firstName" destination="i5k-hT-Tmb" id="Ul2-4i-YrB"/>
                         <outlet property="lastName" destination="gPi-rI-eI6" id="QOL-vy-PUz"/>
+                        <outlet property="txtEmail" destination="NCD-6A-DUU" id="890-qO-g11"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -290,11 +260,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Data-->
+        <!--Entry-->
         <scene sceneID="NzU-sb-ou0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oSf-vP-WZt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Data" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Entry" selectedImage="tab-icon-entry" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kmK-yy-aKE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -313,7 +283,7 @@
         <scene sceneID="vYY-he-093">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zPD-gl-ZqJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="User" image="second" selectedImage="tab-icon-profile" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="08N-00-3xO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -330,8 +300,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StoryBoardLogo" width="600" height="600"/>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="tab-icon-entry" width="30" height="30"/>
+        <image name="tab-icon-profile" width="30" height="30"/>
     </resources>
 </document>

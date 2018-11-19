@@ -58,6 +58,10 @@ class SessionManager {
         }
     }
     
+    func getProfileImageURL() ->URL? {
+        let url = URL(string: (self.profile?.pictureURL.absoluteString)!)
+        return url
+    }
     
     func getProfileImage() -> UIImage {
         if(self.profileImage == nil) {

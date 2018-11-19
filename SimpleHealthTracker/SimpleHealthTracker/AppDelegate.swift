@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Kingfisher
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -89,3 +90,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
+
+extension UIImageView {
+    
+    func getFromUrl1(url: URL?, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        if url == nil{
+            return
+        }
+        contentMode = mode
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    
+    func loadFromUrl(url: URL?, contentMode: UIViewContentMode = .scaleAspectFit, indicatorColor: UIColor? = nil) {
+        self.getFromUrl( url:url, contentMode:contentMode, indicatorColor:indicatorColor)
+    }
+    
+    func getFromUrl(url: URL?, contentMode: UIViewContentMode = .scaleAspectFit, indicatorColor: UIColor? = nil) {
+        
+        if url == nil{
+            return
+        }
+        
+        self.contentMode = contentMode
+        self.kf.indicatorType = .activity
+        if indicatorColor != nil {
+            (self.kf.indicator?.view as? UIActivityIndicatorView)?.color = indicatorColor
+        }
+        
+        self.kf.setImage(with: url, options: [.transition(.fade(0.2))], completionHandler: {
+            (image, error, cacheType, imageUrl) in
+            // image: Image? `nil` means failed
+            // error: NSError? non-`nil` means failed
+            // cacheType: CacheType
+            //                  .none - Just downloaded
+            //                  .memory - Got from memory cache
+            //                  .disk - Got from disk cache
+            // imageUrl: URL of the image
+            if error != nil {
+                print ("error downloading  \(String(describing: imageUrl ))  \(error.debugDescription)")
+            }
+        })
+    }
+    
+    func getFromUrl(link: String?, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link!) else { return }
+        getFromUrl(url: url, contentMode: mode)
+    }
+}
+
+

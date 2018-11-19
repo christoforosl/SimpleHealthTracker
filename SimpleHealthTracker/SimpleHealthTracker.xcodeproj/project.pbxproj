@@ -25,6 +25,11 @@
 		95E280022199A84B000DDC9E /* SecurityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E280012199A84B000DDC9E /* SecurityExtensions.swift */; };
 		95E280042199A89C000DDC9E /* NotLoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E280032199A89B000DDC9E /* NotLoggedInView.swift */; };
 		95E280062199A8DF000DDC9E /* NotLoggedInView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95E280052199A8DF000DDC9E /* NotLoggedInView.xib */; };
+		A309547F21A2C46700527DED /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309547E21A2C46700527DED /* LoadingOverlay.swift */; };
+		A309548521A2C82C00527DED /* Gotham-Bold_0.otf in Resources */ = {isa = PBXBuildFile; fileRef = A309548121A2C82C00527DED /* Gotham-Bold_0.otf */; };
+		A309548621A2C82C00527DED /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = A309548221A2C82C00527DED /* Gotham-Book.otf */; };
+		A309548721A2C82C00527DED /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A309548321A2C82C00527DED /* Gotham-BoldItalic.otf */; };
+		A309548821A2C82C00527DED /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A309548421A2C82C00527DED /* Gotham-BookItalic.otf */; };
 		A3D85559219740A000503A05 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D855582197409F00503A05 /* MessageBox.swift */; };
 		A3D8555B219754BE00503A05 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3D8555A219754BE00503A05 /* Auth0.plist */; };
 /* End PBXBuildFile section */
@@ -72,6 +77,11 @@
 		95E280012199A84B000DDC9E /* SecurityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecurityExtensions.swift; sourceTree = "<group>"; };
 		95E280032199A89B000DDC9E /* NotLoggedInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotLoggedInView.swift; sourceTree = "<group>"; };
 		95E280052199A8DF000DDC9E /* NotLoggedInView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotLoggedInView.xib; sourceTree = "<group>"; };
+		A309547E21A2C46700527DED /* LoadingOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
+		A309548121A2C82C00527DED /* Gotham-Bold_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold_0.otf"; sourceTree = "<group>"; };
+		A309548221A2C82C00527DED /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		A309548321A2C82C00527DED /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
+		A309548421A2C82C00527DED /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
 		A3D855582197409F00503A05 /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		A3D8555A219754BE00503A05 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		DD093B572B5207D4794F6128 /* Pods-SimpleHealthTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleHealthTracker.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-SimpleHealthTracker/Pods-SimpleHealthTracker.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +148,9 @@
 		954B919521809B3000ED7221 /* SimpleHealthTracker */ = {
 			isa = PBXGroup;
 			children = (
+				A309548021A2C82C00527DED /* fonts */,
 				950FE1B0219B04A2000C96D3 /* SimpleHealthEntryDataModel.xcdatamodeld */,
+				A309547E21A2C46700527DED /* LoadingOverlay.swift */,
 				950FE1AC219AE9E4000C96D3 /* DataEntryViewController.swift */,
 				95E280032199A89B000DDC9E /* NotLoggedInView.swift */,
 				95E280052199A8DF000DDC9E /* NotLoggedInView.xib */,
@@ -175,6 +187,17 @@
 				954B91BA21809B3100ED7221 /* Info.plist */,
 			);
 			path = SimpleHealthTrackerUITests;
+			sourceTree = "<group>";
+		};
+		A309548021A2C82C00527DED /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A309548121A2C82C00527DED /* Gotham-Bold_0.otf */,
+				A309548221A2C82C00527DED /* Gotham-Book.otf */,
+				A309548321A2C82C00527DED /* Gotham-BoldItalic.otf */,
+				A309548421A2C82C00527DED /* Gotham-BookItalic.otf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		C00324B7ED7FFB26C1CAB9CC /* Pods */ = {
@@ -295,11 +318,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A309548821A2C82C00527DED /* Gotham-BookItalic.otf in Resources */,
 				954B91A321809B3000ED7221 /* LaunchScreen.storyboard in Resources */,
 				95E280062199A8DF000DDC9E /* NotLoggedInView.xib in Resources */,
+				A309548521A2C82C00527DED /* Gotham-Bold_0.otf in Resources */,
 				954B91A021809B3000ED7221 /* Assets.xcassets in Resources */,
 				954B919E21809B3000ED7221 /* Main.storyboard in Resources */,
 				A3D8555B219754BE00503A05 /* Auth0.plist in Resources */,
+				A309548621A2C82C00527DED /* Gotham-Book.otf in Resources */,
+				A309548721A2C82C00527DED /* Gotham-BoldItalic.otf in Resources */,
 				950FE1F3219B17B5000C96D3 /* HeatlhEntryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +378,7 @@
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/JWTDecode/JWTDecode.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Lock/Lock.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
@@ -362,6 +390,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWTDecode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lock.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -381,6 +410,7 @@
 				950FE1AF219AFBAC000C96D3 /* Entry.swift in Sources */,
 				9563577221959CEE0027F183 /* ProfileViewController.swift in Sources */,
 				95E280022199A84B000DDC9E /* SecurityExtensions.swift in Sources */,
+				A309547F21A2C46700527DED /* LoadingOverlay.swift in Sources */,
 				95E280042199A89C000DDC9E /* NotLoggedInView.swift in Sources */,
 				A3D85559219740A000503A05 /* MessageBox.swift in Sources */,
 				954B919721809B3000ED7221 /* AppDelegate.swift in Sources */,

@@ -44,8 +44,11 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated);
+        LoadingOverlay.shared.showActivityIndicator(view: self.view)
         self.checkLoginStatus(handler: {
+            
             self.loadDataFromLocalStorage()
+            LoadingOverlay.shared.hideOverlayView()
         })
         
         
@@ -55,6 +58,7 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @objc func rightNavBarItemAction() {
         
     }
@@ -75,18 +79,6 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
         
         let leftButton = UIBarButtonItem(customView: view)
         self.navigationItem.rightBarButtonItem = leftButton
-        
-//        let imageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 25.0, height: 25.0))
-//        imageView.image = img //.withRenderingMode(.alwaysOriginal)
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.layer.cornerRadius = 12.5
-//        imageView.layer.masksToBounds = true
-//        imageView.backgroundColor = UIColor.red
-//        self.btnProfile.customView = imageView
-//
-//        let barButton = UIBarButtonItem()
-//        barButton.setBackButtonBackgroundImage(img, for: .normal, barMetrics: .default)
-//        navigationItem.setLeftBarButton(barButton, animated: false)
        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
