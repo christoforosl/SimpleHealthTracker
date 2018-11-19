@@ -112,6 +112,7 @@ public class NotLoggedInLabelFactory {
         notLoggedInActivelabel.accessibilityIdentifier = "notLoggedInActivelabel"
         
         notLoggedInActivelabel.customize { label in
+            label.font = UIFont(name: "Gotham-Book", size: 17)
             label.text = labelText;
             label.numberOfLines = 0
             label.lineSpacing = 4

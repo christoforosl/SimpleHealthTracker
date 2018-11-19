@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Gotham-BoldItalic.otf">
-            <string>Gotham-BoldItalic</string>
+        <array key="Gotham-Bold_0.otf">
+            <string>Gotham-Bold</string>
         </array>
         <array key="Gotham-Book.otf">
             <string>Gotham-Book</string>
@@ -30,11 +30,11 @@
                                 <rect key="frame" x="0.0" y="500" width="375" height="42"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="Gotham-BoldItalic" family="Gotham" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="28"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2018 CodeGen.org  All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd" userLabel="Copyright">
-                                <rect key="frame" x="0.0" y="621.5" width="375" height="26"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="30.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="13"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -45,8 +45,8 @@
                                     <constraint firstAttribute="height" constant="342" id="7PN-7h-LNw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1 Build: 8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0M-qN-uEn" userLabel="APP_LABEL">
-                                <rect key="frame" x="140.5" y="602" width="95" height="11"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1 Build: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z0M-qN-uEn" userLabel="APP_LABEL">
+                                <rect key="frame" x="143.5" y="595.5" width="89" height="13"/>
                                 <fontDescription key="fontDescription" name="Gotham-Book" family="Gotham" pointSize="11"/>
                                 <nil key="highlightedColor"/>
                             </label>

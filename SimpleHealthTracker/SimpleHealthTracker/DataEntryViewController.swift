@@ -44,9 +44,9 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
     override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated);
-        LoadingOverlay.shared.showActivityIndicator(view: self.view)
+        
         self.checkLoginStatus(handler: {
-            
+            LoadingOverlay.shared.showActivityIndicator(view: self.view)
             self.loadDataFromLocalStorage()
             LoadingOverlay.shared.hideOverlayView()
         })

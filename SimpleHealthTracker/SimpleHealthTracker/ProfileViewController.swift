@@ -35,7 +35,10 @@ class ProfileViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.loadData()
+        self.checkLoginStatus(handler: {
+            self.loadData()
+            
+        })
     }
 
 }
