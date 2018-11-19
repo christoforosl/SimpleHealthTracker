@@ -29,7 +29,7 @@
                         <constraint firstAttribute="width" constant="200" id="v1b-7F-Xbe"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afD-71-b9N" userLabel="BackHome">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afD-71-b9N" userLabel="BackHome">
                     <rect key="frame" x="0.0" y="354" width="375" height="30"/>
                     <accessibility key="accessibilityConfiguration" identifier="buttonBackhomeAI" label="buttonBackhomeAL">
                         <bool key="isElement" value="NO"/>

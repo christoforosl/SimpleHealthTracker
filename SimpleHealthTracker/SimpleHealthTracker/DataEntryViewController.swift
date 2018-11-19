@@ -128,6 +128,24 @@ class DataEntryViewController: UIViewController, UICollectionViewDataSource , UI
     }
     
     @objc func btnUpdateClick(_ sender: Any!) {
+        var errmsg = [String]()
+        var num = Int(self.txtCircumferance.text!)
+        if num == nil {
+            errmsg.append("A Valid Number is required for circumference")
+        }
+        num = Int(self.txtWeight.text!)
+        if num == nil {
+            errmsg.append("A Valid Number is required for weight")
+        }
+        num = Int(self.txtFatPercent.text!)
+        if num == nil {
+            errmsg.append("A Valid Number is required for Fat Percentage")
+        }
+        if errmsg.count > 0 {
+            MessageBox.showError("Please correct the following input errors: " + "\n" + errmsg.joined(separator: "\n"))
+            return
+        }
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let newEntry = NSEntityDescription.insertNewObject(forEntityName: "HealthEntry", into: context)
